@@ -5,29 +5,20 @@ def Classroom():
         grade = input("Input student grade: ")
         Grades.append(int(grade))
     print(Range(Grades))
+    print(Mean(Grades))
 
         
 def Range(Grades):
-    LowestGrade = 0
-    HighestGrade = 0
-    for i in range(len(Grades) - 1):
-        LowestGrade = Grades[i]
-        if LowestGrade < Grades[i+1]:
-            pass
-        else:
-            LowestGrade = Grades[i+1]
-    
-    for i in range(len(Grades) - 1):
-        HighestGrade = Grades[i]
-        if HighestGrade > Grades[i+1]:
-            pass
-        else:
-            HighestGrade = Grades[i+1]
-    ClassRange = HighestGrade - LowestGrade
-
+    ClassMin = min(Grades)
+    ClassMax = max(Grades)
+    ClassRange = ClassMax - ClassMin
     return f"The Range is {ClassRange}"
 
-def Mean():
-    pass
+def Mean(Grades):
+    Total = 0 
+    for i in range(len(Grades)):
+        Total += Grades[i]
+    Mean = str(round(Total/len(Grades),2))
+    return f"The Mean is {Mean}"
 
 Classroom()
