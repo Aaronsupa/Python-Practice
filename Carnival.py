@@ -1,5 +1,5 @@
 class person:
-    def __init__(self, first, last, ticket, attendance):
+    def __init__(self, first, last, ticket = '10', attendance = False):
         self.firstName = first
         self.lastName  = last
         self.ticket = ticket
@@ -11,4 +11,8 @@ class person:
             return f"{self.firstName} {self.lastName} has already attended the carnival."
         else:
             return f"{self.firstName} {self.lastName} hasn't attended the carnival."
+        
+Sam = person(first= 'sam', last= 'turner', attendance = True)
+Sam.attendance = 'False'
+print(Sam.hasBeen(Sam.attendance))
 
